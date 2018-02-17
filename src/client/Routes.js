@@ -1,12 +1,13 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
 
-import Home from './Home';
+import Home from './components/Home';
+import UsersList from './components/UsersList';
 
 const Routes = () => (
   <div>
     <Route exact path="/" component={Home} />
-    <Route path="/hi" component={() => 'Hi'} />
+    <Route path="/users" component={UsersList} />
   </div>
 );
 
