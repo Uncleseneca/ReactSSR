@@ -1,9 +1,9 @@
 import React from 'react';
 
 const Home = () => (
-  <div>
-    <div>Home asdasdasdasd</div>
-    <button onClick={() => console.log('Hi there!')}>Press me!</button>
+  <div className="center-align">
+    <h3>Welcome!</h3>
+    <p>Check out React SSR!</p>
   </div>
 );
 
