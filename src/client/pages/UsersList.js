@@ -29,4 +29,7 @@ const mapDispatchToProps = dispatch => ({
 
 export const loadData = store => store.dispatch(fetchUsers());
 
-export default connect(mapStateToProps, mapDispatchToProps)(UsersList);
+export default {
+  loadData,
+  component: connect(mapStateToProps, mapDispatchToProps)(UsersList),
+};

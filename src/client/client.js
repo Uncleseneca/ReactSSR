@@ -10,7 +10,7 @@ import { renderRoutes } from 'react-router-config';
 import rootReducer from './reducers';
 import Routes from './Routes';
 
-const store = createStore(rootReducer, {}, applyMiddleware(thunk));
+const store = createStore(rootReducer, window.INITIAL_STATE, applyMiddleware(thunk)); // eslint-disable-line no-undef
 
 ReactDOM.hydrate(
   <Provider store={store}>
