@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Helmet } from 'react-helmet';
 import { fetchAdmins } from '../actions';
 import requireAuth from '../components/hocs/requireAuth';
 
@@ -8,11 +9,19 @@ class AdminsList extends React.Component {
     this.props.fetchAdmins();
   }
 
+  helmet = () => (
+    <Helmet>
+      <title>{`${this.props.admins.length} Admins loaded`}</title>
+      <meta property="og:title" content="Admins" />
+    </Helmet>
+  );
+
   renderAdmins = () => this.props.admins.map(user => <li key={user.id}>{user.name}</li>);
 
   render() {
     return (
       <div>
+        {this.helmet()}
         Protected list of admins:
         <ul>{this.renderAdmins()}</ul>
       </div>
